@@ -1,0 +1,54 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "APISpecs_withFormParameter",
+    "x-lastModified": "Jan 15, 2017 22:41PM PST"
+  },
+  "paths": {
+    "/form": {
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/Form Parameter"
+            },
+            "examples": {
+              "application/json": {
+                "Form parameter": "Successfull"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "file parameter",
+            "required": false,
+            "type": "file",
+            "format": "text"
+          }
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Form Parameter": {
+      "type": "object",
+      "properties": {
+        "Form parameter": {
+          "type": "string",
+          "default": "Successfull"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.2.3",
+    "title": "Computer_store",
+    "x-lastModified": "Jan 17, 2017 00:03AM PST",
+    "description": "Store for desktops and laptops"
+  },
+  "paths": {
+    "/comp/{name}": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/HelloMsg"
+            },
+            "examples": {
+              "application/json": {
+                "Hello": "Nikhil"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string",
+            "format": ""
+          }
+        ],
+        "description": "Computer Store"
+      }
+    }
+  },
+  "definitions": {
+    "HelloMsg": {
+      "type": "object",
+      "properties": {
+        "Hello": {
+          "type": "string",
+          "default": "Nikhil"
+        }
+      }
+    }
+  }
+}

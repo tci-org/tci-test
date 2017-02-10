@@ -1,0 +1,90 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.4",
+    "title": "Football_International",
+    "x-lastModified": "Jan 18, 2017 23:06PM PST",
+    "description": "Enter the id and get names of country"
+  },
+  "paths": {
+    "/country/{id}": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/Name of country"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "name of the country",
+            "required": false,
+            "type": "string",
+            "format": ""
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Enter the number to get required country",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+          }
+        ]
+      },
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/form"
+            },
+            "examples": {
+              "application/json": {
+                "Testing": "Successfull"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string",
+            "format": ""
+          }
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Name of country": {
+      "Default country is": "India"
+    },
+    "form": {
+      "type": "object",
+      "properties": {
+        "Testing": {
+          "type": "string",
+          "default": "Successfull"
+        }
+      }
+    }
+  }
+}
